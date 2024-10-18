@@ -18,10 +18,10 @@ Team Members:
 
 ## Предложенное решение
 
-1. Были собраны синтетические данные с помощью `gpt-4o` и  `Qwen/Qwen2.5-72B`, расширив размер обучающей выборки до 1400 примеров
+1. Были собраны синтетические данные с помощью `gpt-4o` и  `Qwen/Qwen2.5-72B`, расширен размер обучающей выборки до 1400 примеров
 2. В качестве основного решения предлагается LoRA-адаптер для `unsloth/Qwen2.5-32B-bnb-4bit` (скачать можно по [ссылке](https://huggingface.co/lightsource/final-lora-qwen32b))
 3. Помимо этого был обучен второй LoRA-адаптер для `unsloth/Qwen2.5-32B-bnb-4bit` с другими гиперпараметрами, однако он имеет несколько меньший скор (скачать можно по [ссылке](https://huggingface.co/lightsource/qwen32b-4bit-lora-newsynth-newparams-81steps))
-4. Также есть легковесное решение: LoRA-адаптер для `unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit`, при обучении потребляется всего 9GB VRAM (скачать можно по ссылке)
+4. Также есть легковесное решение: LoRA-адаптер для `unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit`, при обучении потребляется всего 9GB VRAM (скачать можно по [ссылке](https://huggingface.co/lightsource/lora-synth-8b-llama))
 5. Дополнительно есть решение с Few-Shot + Answer Reconstruction для `Qwen/Qwen2.5-72B` по Api HuggingFace, здесь модель не дообучалась под эту задачу.
 
 Для воспроизведения решения: 
