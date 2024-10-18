@@ -1,3 +1,4 @@
+import torch
 import subprocess
 import sys
 
@@ -20,3 +21,10 @@ subprocess.run([sys.executable, "train.py"], check=True)
 subprocess.run([sys.executable, "inference.py"], check=True)
 
 subprocess.run([sys.executable, "convert.py"], check=True)
+
+
+if torch.cuda.is_available() and torch.cuda.get_device_capability()[0] >= 8:
+    install("packaging")
+    install("ninja")
+    install("einops")
+    install("flash-attn>=2.6.3")
