@@ -35,6 +35,10 @@ Cпособ 2:
 2. Запустить [ноутбук](notebooks/7.%20Qwen2.5%2032b%204bit%20LoRA%20(r%3D64)%20Inference.ipynb) для инференса, предварительно проверив, что выбран именно `checkpoint-140`.
 3. Запустить [ноутбук](notebooks/10.%20Generate%20Sumbit.ipynb) для генерации сабмита, а качестве .pkl файла указать output предыдущего инференс-ноутбука.
 
+Уточнение:
+
+Вся работа производилась на NVIDIA A100, CUDA 12.1, torch 2.4.0, версии библиотек подобраны именно под эту конфигурацию.
+
 ## Ноутбуки
 
 - [Few-shot Qwen72b Inference](notebooks/0.%20Few-shot%20Qwen72b%20Inference.ipynb) - 5-shot + answer reconstruction w/ HF Api с `Qwen/Qwen2.5-72B`, решение с готовой моделью, дающее скор 0.657 на Public LB
