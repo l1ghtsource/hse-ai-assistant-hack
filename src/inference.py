@@ -22,7 +22,7 @@ dtype = None
 load_in_4bit = True
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name='/outputs/checkpoint-140',
+    model_name='outputs/checkpoint-140',
     max_seq_length=max_seq_length,
     dtype=dtype,
     load_in_4bit=load_in_4bit,
@@ -100,7 +100,11 @@ test = combine_data(test_solutions, test_tasks, test_tests)
 test_text = test[['description', 'author_solution', 'student_solution', 'tests']]
 
 
-def remove_comments(code_str):
+def strip_comments_and_docstrings(code_str):
+    """
+    Strip comments, docstrings, and multiline comments from a given code string.
+    """
+    # First, remove multiline comments using regex
     multiline_comment_pattern = r'/\*.*?\*/'
     code_str = re.sub(multiline_comment_pattern, '', code_str, flags=re.DOTALL)
 
@@ -109,28 +113,35 @@ def remove_comments(code_str):
     last_lineno = -1
     last_col = 0
 
-    tokgen = tokenize.generate_tokens(StringIO(code_str).readline)
-    for toktype, ttext, (slineno, scol), (elineno, ecol), ltext in tokgen:
-        if slineno > last_lineno:
-            last_col = 0
-        if scol > last_col:
-            result.append(" " * (scol - last_col))
+    # Tokenize the cleaned string
+    try:
+        tokgen = tokenize.generate_tokens(StringIO(code_str).readline)
+        for toktype, ttext, (slineno, scol), (elineno, ecol), ltext in tokgen:
+            if slineno > last_lineno:
+                last_col = 0
+            if scol > last_col:
+                result.append(" " * (scol - last_col))
 
-        if toktype == token.STRING and prev_toktype == token.INDENT:
-            pass
-        elif toktype == tokenize.COMMENT:
-            pass
-        else:
-            result.append(ttext)
+            if toktype == token.STRING and prev_toktype == token.INDENT:
+                # Skip docstring
+                pass
+            elif toktype == tokenize.COMMENT:
+                # Skip comment
+                pass
+            else:
+                result.append(ttext)
 
-        prev_toktype = toktype
-        last_col = ecol
-        last_lineno = elineno
+            prev_toktype = toktype
+            last_col = ecol
+            last_lineno = elineno
+    except tokenize.TokenError:
+        # Handle TokenError gracefully
+        pass
 
     return ''.join(result)
 
 
-test_text['student_solution'] = test_text['student_solution'].apply(remove_comments)
+test_text['student_solution'] = test_text['student_solution'].apply(strip_comments_and_docstrings)
 
 input_template = '''
 Условие задачи: {description}
