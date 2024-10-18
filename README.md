@@ -39,6 +39,10 @@ Cпособ 2 (предпочтителен):
 
 > Вся работа производилась на `NVIDIA A100`, `CUDA 12.4`, `torch 2.4.0`, версии библиотек подобраны именно под эту конфигурацию. Docker образ: `runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04`
 
+<div style="border: 2px solid red; padding: 10px; background-color: #ffe6e6; color: red; border-radius: 5px;">
+  <strong>❗ Важно:</strong> есть шанс того, что лучшим на привате окажется не тот сабмит, для которого сформирован main.py, в таком случае Вам доступен только второй вариант запуска - через jupiter ноутбуки (свяжитесь с нами, и мы сообщим какие ноутбуки запускать для воспроизведения решения).
+</div>
+
 ## Ноутбуки
 
 - [Few-shot Qwen72b Inference](notebooks/0.%20Few-shot%20Qwen72b%20Inference.ipynb) - 5-shot + answer reconstruction w/ HF Api с `Qwen/Qwen2.5-72B`, решение с готовой моделью, дающее скор 0.657 на Public LB
