@@ -3,10 +3,10 @@
 *MISIS Kurenkov AI team*
 
 Team Members:
-1) **Даниил Душенев** - ML ([tg](https://t.me/daniil_d_d)) 
-2) **Кирилл Рыжичкин** - ML ([tg](https://t.me/polnostju))
-3) **Егор Гречин** - ML ([tg](https://t.me/who_is_sleep))
-5) **Артём Плужников** - ML ([tg](https://t.me/TheTom205))
+1) **Даниил Душенев** - ML
+2) **Кирилл Рыжичкин** - ML
+3) **Егор Гречин** - ML
+5) **Артём Плужников** - ML
  
 ## Кратко
 
