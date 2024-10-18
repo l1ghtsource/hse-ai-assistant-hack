@@ -1,4 +1,12 @@
 # HSE AI Assistant Hack: Python
+
+*MISIS Kurenkov AI team*
+
+Team Members:
+1) **Даниил Душенев** - ML
+2) **Кирилл Рыжичкин** - ML
+3) **Егор Гречин** - ML
+5) **Артём Плужников** - ML
  
 ## Кратко
 
