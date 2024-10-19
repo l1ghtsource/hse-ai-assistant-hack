@@ -53,7 +53,7 @@ Cпособ 2 (предпочтителен):
 - [Generate Synthetic Wrong Solutions](notebooks/2.%20Generate%20Synthetic%20Wrong%20Solutions.ipynb) - генерация неверных решений для новых задач с `Qwen/Qwen2.5-72B`
 - [Generate Answers for Synthetic Train](notebooks/3.%20Generate%20Answers%20for%20Synthetic%20Train.ipynb) - генерация авторских комментариев для новых задач с `gpt-4o`
 - [Llama3.1 8b 4bit LoRA Training](notebooks/4.%20Llama3.1%208b%204bit%20LoRA%20Training.ipynb) - обучение LoRA адаптера для `unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit`, **легковесное решение** (only 9GB VRAM for training)
-- [Llama3.1 8b 4bit LoRA Inference](notebooks/5.%20Llama3.1%208b%204bit%20LoRA%20Inference.ipynb) - инференс вышеуказанной модели, скор 0.637 на Public LB
+- [Llama3.1 8b 4bit LoRA Inference](notebooks/5.%20Llama3.1%208b%204bit%20LoRA%20Inference.ipynb) - инференс вышеуказанной модели, скор 0.658 на Public LB
 - [Qwen2.5 32b 4bit LoRA (r=64) Training](<notebooks/6.%20Qwen2.5%2032b%204bit%20LoRA%20(r%3D64)%20Training.ipynb>) - обучение LoRA адаптера для `unsloth/Qwen2.5-32B-bnb-4bit`, **основное решение** (30GB VRAM for training)
 - [Qwen2.5 32b 4bit LoRA (r=64) Inference](<notebooks/7.%20Qwen2.5%2032b%204bit%20LoRA%20(r%3D64)%20Inference.ipynb>) - инференс вышеуказанной модели, скор **0.688** на Public LB
 - [Qwen2.5 32b 4bit LoRA (r=256) Training](<notebooks/8.%20Qwen2.5%2032b%204bit%20LoRA%20(r%3D256)%20Training.ipynb>) - обучение LoRA адаптера для `unsloth/Qwen2.5-32B-bnb-4bit` с другими гиперпараметрами (70GB VRAM for training)
