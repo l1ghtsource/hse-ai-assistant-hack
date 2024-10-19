@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/usr/src/app/data
+      - ./notebooks:/usr/src/app/notebooks
+    environment:
+      - TRAIN=false # Установи TRAIN=true, если необходимо запустить обучение
+      - NVIDIA_VISIBLE_DEVICES=all
+    command: python src/inference.py && python src/convert.py
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: [ '0' ]
+              capabilities: [ gpu ]
