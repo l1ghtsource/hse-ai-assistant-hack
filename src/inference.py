@@ -22,7 +22,7 @@ dtype = None
 load_in_4bit = True
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name='outputs/checkpoint-140',
+    model_name='lightsource/final-lora-qwen32b', # outputs/checkpoint-140 (замените если не хотите использовать готовые веса)
     max_seq_length=max_seq_length,
     dtype=dtype,
     load_in_4bit=load_in_4bit,
