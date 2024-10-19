@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Устанавливаем рабочую директорию
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/src
 
 # Копируем файлы проекта
 COPY ./src ./src
